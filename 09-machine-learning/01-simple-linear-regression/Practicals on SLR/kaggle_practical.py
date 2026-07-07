@@ -5,15 +5,7 @@ Created on Wed Jun 24 11:59:56 2026
 @author: sivag
 """
 #Phase :: 1
-#step 1 :: Business problem 
-# Step 1 — Business Problem:
-#   An HR/recruitment company wants to estimate appropriate salary offers
-#   based on a candidate's years of experience, to standardise and speed
-#   up offer decisions.
-#------------------------------------------
-#step 2 ::  Target variable  & Success Metric:
-#   Target (y) = Salary (continuous -> regression).
-#   Success = predictions within an acceptable error margin (judged via R^2 and RMSE).
+
 # Step 3 — Acquire Dataset:
 import numpy as np
 import pandas as pd
@@ -60,21 +52,6 @@ plt.xlabel('Years of Exp')
 plt.ylabel('Salary')
 plt.show()
 
-#it look roughly like a STRAIGHT LINE
-
- 
-# %% PHASE 3: DATA CLEANING & FEATURE ENGINEERING =====================
- 
-# Step 12-14 — Clean:
-#   Ran the checks in Phase 2: no missing values, no duplicates.
-#   Nothing to fix here -> step EXECUTED, no action required (not skipped).
- 
-# Step 15-18 — Encoding / Feature Engineering / Multicollinearity:
-#   NOT APPLICABLE here, and here's why (stating it explicitly per the rule):
-#     - Only ONE feature (YearsExperience) -> no categorical columns to encode.
-#     - No derived features needed for a single continuous predictor.
-#     - Multicollinearity requires 2+ features to even exist.
-#   This is WHY it's called SIMPLE Linear Regression - exactly ONE independent variable.
  
 
 # %% PHASE 4: DATA PREPARATION FOR MODELING ===========================
@@ -95,13 +72,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.20, random_state=0
 )
  
-# Step 21 — Feature Scaling:
-#   NOT required for SLR with one feature - there is nothing to balance against.
-#   (Scaling matters when features have different units/scales, e.g. age vs income.)
- 
-# Step 22 — Class Imbalance:
-#   NOT APPLICABLE - this is regression, not classification.
- 
+
  
 # %% PHASE 5: MODEL BUILDING & TRAINING ===============================
  
@@ -150,13 +121,7 @@ print(f"Average CV R2: {cv_scores.mean():.4f}")
 print(f"Std dev across folds: {cv_scores.std():.4f}")
 # Low std dev = consistent performance = stable model, not overfitting.
  
-# Step 28 — Hyperparameter Tuning:
-#   SLR has essentially no hyperparameters to tune.
-#   (Becomes relevant later with Ridge/Lasso/Random Forest etc.)
- 
-# Step 29 — Compare Models:
-#   SLR vs SLR isn't meaningful (one model family fits this structure).
-#   Becomes critical from MLR / Polynomial / Random Forest onward.
+
  
 # Step 30 — Final Evaluation:
 print(f"FINAL TEST R2: {test_r2:.4f}")
