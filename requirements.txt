@@ -8,3 +8,6 @@ plotly
 
 # Web app framework
 streamlit
+
+#ml
+scikit-learn
