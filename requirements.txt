@@ -1,0 +1,10 @@
+# Core data science stack
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+
+
+# Web app framework
+streamlit
